@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1100" width="1100" height="1100" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ramo di limoni mediterranei">
+  <title>Ramo di limoni mediterranei</title>
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4EBD8"/>
+      <stop offset="52%" stop-color="#EFE3CC"/>
+      <stop offset="100%" stop-color="#E6D8BE"/>
+    </linearGradient>
+    <radialGradient id="gl3" cx="0.62" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#F7EDD4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F7EDD4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sf3"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="gr3" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="g"/>
+      <feColorMatrix in="g" type="saturate" values="0"/>
+    </filter>
+    <filter id="wa3" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="9" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="1100" fill="url(#sky3)"/>
+  <g filter="url(#wa3)" opacity="0.35">
+    <ellipse cx="300" cy="260" rx="360" ry="150" fill="#EADFC4"/>
+    <ellipse cx="820" cy="820" rx="380" ry="170" fill="#E3D6B8"/>
+  </g>
+  <g>
+    <path d="M-20 300 C 240 340, 420 470, 540 640 C 620 750, 700 860, 820 940" stroke="#5E6B48" stroke-width="17" fill="none" stroke-linecap="round"/>
+    <path d="M300 380 C 420 360, 540 396, 620 470" stroke="#5E6B48" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M480 580 C 600 560, 720 596, 800 660" stroke="#5E6B48" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <g fill="#526240">
+      <ellipse cx="150" cy="286" rx="96" ry="36" transform="rotate(-16 150 286)"/>
+      <ellipse cx="290" cy="330" rx="92" ry="34" transform="rotate(12 290 330)"/>
+      <ellipse cx="236" cy="418" rx="86" ry="32" transform="rotate(46 236 418)"/>
+      <ellipse cx="430" cy="392" rx="90" ry="33" transform="rotate(-8 430 392)"/>
+      <ellipse cx="396" cy="512" rx="84" ry="31" transform="rotate(52 396 512)"/>
+      <ellipse cx="596" cy="540" rx="88" ry="32" transform="rotate(16 596 540)"/>
+      <ellipse cx="558" cy="672" rx="82" ry="30" transform="rotate(58 558 672)"/>
+      <ellipse cx="752" cy="700" rx="86" ry="31" transform="rotate(20 752 700)"/>
+      <ellipse cx="690" cy="836" rx="80" ry="29" transform="rotate(62 690 836)"/>
+    </g>
+    <g fill="#65764F" opacity="0.75">
+      <ellipse cx="216" cy="352" rx="70" ry="26" transform="rotate(24 216 352)"/>
+      <ellipse cx="500" cy="470" rx="68" ry="25" transform="rotate(-14 500 470)"/>
+      <ellipse cx="660" cy="768" rx="66" ry="24" transform="rotate(36 660 768)"/>
+    </g>
+    <g>
+      <g transform="translate(540,430)"><ellipse rx="76" ry="92" fill="#E5C063"/><ellipse cx="-24" cy="-30" rx="26" ry="30" fill="#F2DC9E" opacity="0.8"/><path d="M0 -92 q 10 -22 26 -26" stroke="#5E6B48" stroke-width="8" fill="none"/></g>
+      <g transform="translate(760,590) scale(0.86)"><ellipse rx="76" ry="92" fill="#DFB857"/><ellipse cx="-24" cy="-30" rx="26" ry="30" fill="#EFD694" opacity="0.75"/></g>
+      <g transform="translate(880,830) scale(0.78)"><ellipse rx="76" ry="92" fill="#E5C063"/><ellipse cx="-24" cy="-30" rx="26" ry="30" fill="#F2DC9E" opacity="0.8"/></g>
+    </g>
+    <g fill="#FBF4E2" opacity="0.9">
+      <g transform="translate(360,250)"><circle cx="0" cy="-16" r="17"/><circle cx="-16" cy="-4" r="16"/><circle cx="16" cy="-4" r="16"/><circle cx="-9" cy="12" r="15"/><circle cx="10" cy="12" r="15"/><circle cx="0" cy="0" r="8" fill="#D9B366"/></g>
+      <g transform="translate(700,470) scale(0.85)"><circle cx="0" cy="-16" r="17"/><circle cx="-16" cy="-4" r="16"/><circle cx="16" cy="-4" r="16"/><circle cx="-9" cy="12" r="15"/><circle cx="10" cy="12" r="15"/><circle cx="0" cy="0" r="8" fill="#D9B366"/></g>
+    </g>
+  </g>
+  <rect width="1100" height="1100" filter="url(#gr3)" opacity="0.13"/>
+</svg>

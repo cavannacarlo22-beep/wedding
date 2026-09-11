@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Veduta della Tenuta Klopè al tramonto">
+  <defs>
+    <linearGradient id="vsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5A4E45"/>
+      <stop offset="38%" stop-color="#A57E5E"/>
+      <stop offset="70%" stop-color="#D9A472"/>
+      <stop offset="100%" stop-color="#EDC694"/>
+    </linearGradient>
+    <radialGradient id="vglow" cx="0.7" cy="0.62" r="0.5">
+      <stop offset="0%" stop-color="#FCEFD2" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#E7B383" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A4B38"/>
+      <stop offset="100%" stop-color="#2E3125"/>
+    </linearGradient>
+    <filter id="vsoft"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="vgrain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="6" result="g"/>
+      <feColorMatrix in="g" type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#vsky)"/>
+  <ellipse cx="1120" cy="620" rx="700" ry="380" fill="url(#vglow)"/>
+  <circle cx="1130" cy="596" r="48" fill="#FDF3DA" opacity="0.9"/>
+  <!-- sea -->
+  <rect y="600" width="1600" height="90" fill="#9A8468" opacity="0.85"/>
+  <g opacity="0.3" fill="#F6E2BC"><rect x="1040" y="616" width="200" height="4"/><rect x="1080" y="646" width="150" height="4"/><rect x="300" y="636" width="220" height="3"/></g>
+  <!-- hills -->
+  <path d="M0 604 L200 566 L380 598 L560 572 L720 604 L720 640 L0 640 Z" fill="#6B6250" filter="url(#vsoft)"/>
+  <path d="M1240 600 L1400 570 L1600 596 L1600 640 L1240 640 Z" fill="#6B6250" opacity="0.8" filter="url(#vsoft)"/>
+  <!-- terrain -->
+  <path d="M0 760 C 300 700, 560 742, 860 706 C 1120 676, 1380 724, 1600 690 L1600 1000 L0 1000 Z" fill="url(#vground)"/>
+  <!-- the villa, lit -->
+  <g>
+    <rect x="620" y="560" width="300" height="160" fill="#3A3730"/>
+    <path d="M600 562 L940 562 L918 524 L622 524 Z" fill="#332F29"/>
+    <rect x="892" y="500" width="86" height="220" fill="#3D3932"/>
+    <path d="M878 502 L992 502 L970 472 L900 472 Z" fill="#332F29"/>
+    <g fill="#F3D89C" opacity="0.92">
+      <rect x="654" y="592" width="30" height="42" rx="2"/>
+      <rect x="716" y="592" width="30" height="42" rx="2"/>
+      <rect x="778" y="592" width="30" height="42" rx="2"/>
+      <rect x="840" y="592" width="30" height="42" rx="2"/>
+      <rect x="912" y="540" width="34" height="46" rx="2"/>
+      <path d="M660 720 v-52 a20 20 0 0 1 40 0 v52 z"/>
+      <path d="M740 720 v-52 a20 20 0 0 1 40 0 v52 z"/>
+      <path d="M820 720 v-52 a20 20 0 0 1 40 0 v52 z"/>
+    </g>
+  </g>
+  <!-- cypresses & olives silhouettes -->
+  <g fill="#22251C">
+    <path d="M540 724 c13 0 19 -72 0 -124 c-19 52 -13 124 0 124 z"/>
+    <path d="M590 730 c10 0 15 -58 0 -100 c-15 42 -10 100 0 100 z"/>
+    <path d="M1010 720 c13 0 19 -68 0 -118 c-19 50 -13 118 0 118 z"/>
+    <g transform="translate(300,740)"><path d="M-5 0 v-60 h10 v60 z"/><ellipse cx="0" cy="-78" rx="62" ry="38"/><ellipse cx="-32" cy="-64" rx="36" ry="24"/></g>
+    <g transform="translate(1330,742) scale(0.9)"><path d="M-5 0 v-60 h10 v60 z"/><ellipse cx="0" cy="-78" rx="60" ry="36"/><ellipse cx="30" cy="-64" rx="34" ry="22"/></g>
+    <g transform="translate(150,764) scale(0.8)"><path d="M-5 0 v-58 h10 v58 z"/><ellipse cx="0" cy="-74" rx="58" ry="34"/></g>
+  </g>
+  <!-- festoon lights -->
+  <g opacity="0.85">
+    <path d="M380 742 q 200 -70 420 -30" stroke="#C9A46A" stroke-width="2" fill="none"/>
+    <g fill="#F6DFA8">
+      <circle cx="430" cy="726" r="4"/><circle cx="500" cy="710" r="4"/><circle cx="570" cy="700" r="4"/>
+      <circle cx="640" cy="698" r="4"/><circle cx="710" cy="702" r="4"/><circle cx="780" cy="712" r="4"/>
+    </g>
+  </g>
+  <rect width="1600" height="1000" filter="url(#vgrain)" opacity="0.12"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1200" width="1920" height="1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Rami di ulivo in primo piano">
+  <defs>
+    <filter id="bl" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <g fill="#232619" opacity="0.92" filter="url(#bl)">
+    <!-- top-left olive branch -->
+    <path d="M-20 40 C 140 60, 250 120, 330 210" stroke="#232619" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <g>
+      <ellipse cx="70" cy="36" rx="44" ry="15" transform="rotate(-12 70 36)"/>
+      <ellipse cx="150" cy="70" rx="42" ry="14" transform="rotate(14 150 70)"/>
+      <ellipse cx="120" cy="104" rx="38" ry="13" transform="rotate(38 120 104)"/>
+      <ellipse cx="226" cy="118" rx="42" ry="14" transform="rotate(22 226 118)"/>
+      <ellipse cx="196" cy="164" rx="36" ry="12" transform="rotate(48 196 164)"/>
+      <ellipse cx="296" cy="180" rx="38" ry="13" transform="rotate(34 296 180)"/>
+      <ellipse cx="30" cy="92" rx="36" ry="12" transform="rotate(24 30 92)"/>
+    </g>
+    <!-- top-right sprig -->
+    <path d="M1940 70 C 1800 90, 1700 150, 1640 226" stroke="#232619" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <g>
+      <ellipse cx="1860" cy="58" rx="40" ry="13" transform="rotate(12 1860 58)"/>
+      <ellipse cx="1780" cy="96" rx="38" ry="13" transform="rotate(-14 1780 96)"/>
+      <ellipse cx="1812" cy="132" rx="34" ry="11" transform="rotate(-40 1812 132)"/>
+      <ellipse cx="1706" cy="144" rx="38" ry="13" transform="rotate(-22 1706 144)"/>
+      <ellipse cx="1738" cy="190" rx="32" ry="11" transform="rotate(-48 1738 190)"/>
+      <ellipse cx="1648" cy="196" rx="34" ry="12" transform="rotate(-34 1648 196)"/>
+    </g>
+    <!-- bottom grasses -->
+    <g opacity="0.85">
+      <path d="M60 1200 C 70 1120, 40 1080, 30 1040" stroke="#232619" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M130 1200 C 120 1130, 150 1090, 172 1056" stroke="#232619" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M1800 1200 C 1812 1126, 1780 1084, 1762 1050" stroke="#232619" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M1880 1200 C 1868 1140, 1900 1096, 1918 1064" stroke="#232619" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

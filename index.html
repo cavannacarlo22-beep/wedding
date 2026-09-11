@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#20221C">
+<title>Mario &amp; Lucia · 13 agosto 2027 · Tenuta Klopè</title>
+<meta name="description" content="Invito digitale al matrimonio di Mario Rossi e Lucia Bianchi — 13 agosto 2027, Tenuta Klopè, Francavilla Angitola (VV), Calabria.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked" data-phase="cover">
+
+<!-- ══════════════════ Cursore personalizzato (solo desktop con puntatore fine) ══ -->
+<div class="cursor" aria-hidden="true">
+  <span class="cursor__dot"></span>
+  <span class="cursor__ring"></span>
+</div>
+
+<!-- ══════════════════ Sistema particellare globale ══════════════════ -->
+<canvas id="particles" class="particles" aria-hidden="true"></canvas>
+
+<a class="skip-link" href="#site">Salta l'animazione e vai all'invito</a>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     LIVELLO 1 — L'APERTURA DELLA BUSTA
+     ══════════════════════════════════════════════════════════════════ -->
+<div id="stage" class="stage">
+
+  <div class="stage__light" aria-hidden="true"></div>
+  <div class="stage__haze" aria-hidden="true"></div>
+  <div class="stage__vignette" aria-hidden="true"></div>
+
+  <!-- ─── La busta ─── -->
+  <div class="envelope-scene" id="envelopeScene">
+    <div class="envelope" id="envelope">
+
+      <div class="envelope__shadow" aria-hidden="true"></div>
+
+      <!-- retro della busta -->
+      <div class="env-back" aria-hidden="true"></div>
+
+      <!-- la carta contenuta -->
+      <div class="env-card" id="envCard" aria-hidden="true">
+        <div class="env-card__inner">
+          <div class="env-card__rule"></div>
+          <p class="env-card__eyebrow">Save the date</p>
+          <p class="env-card__names">Mario<span>&amp;</span>Lucia</p>
+          <p class="env-card__date">13 · 08 · 2027</p>
+          <div class="env-card__rule"></div>
+        </div>
+      </div>
+
+      <!-- fronte della busta -->
+      <div class="env-front">
+        <div class="env-front__paper" aria-hidden="true"></div>
+        <div class="env-front__content">
+          <p class="env-front__names">
+            <span>Mario Rossi</span>
+            <em>&amp;</em>
+            <span>Lucia Bianchi</span>
+          </p>
+          <p class="env-front__date">13 · 08 · 2027</p>
+        </div>
+        <!-- lembi interni della tasca -->
+        <div class="env-front__fold env-front__fold--left" aria-hidden="true"></div>
+        <div class="env-front__fold env-front__fold--right" aria-hidden="true"></div>
+        <div class="env-front__fold env-front__fold--bottom" aria-hidden="true"></div>
+      </div>
+
+      <!-- lembo superiore -->
+      <div class="env-flap" id="envFlap" aria-hidden="true">
+        <div class="env-flap__face"></div>
+      </div>
+
+      <!-- sigillo in ceralacca -->
+      <button class="seal" id="seal" type="button"
+              aria-label="Apri l'invito rompendo il sigillo">
+        <span class="seal__halo" aria-hidden="true"></span>
+        <span class="seal__body">
+          <svg class="seal__svg" viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <radialGradient id="sealG" cx="0.36" cy="0.3" r="0.78">
+                <stop offset="0%" stop-color="#8E8B54"/>
+                <stop offset="42%" stop-color="#6E6C3E"/>
+                <stop offset="78%" stop-color="#4A4E2E"/>
+                <stop offset="100%" stop-color="#343823"/>
+              </radialGradient>
+              <filter id="sealNoise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" seed="4" result="n"/>
+                <feComposite in="n" in2="SourceAlpha" operator="in" result="ni"/>
+                <feColorMatrix in="ni" type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.06 0 0 0 0.30 0"/>
+                <feBlend in="SourceGraphic" in2="ni" mode="multiply"/>
+              </filter>
+            </defs>
+            <g filter="url(#sealNoise)">
+              <path class="seal__blob" d="M60 5
+                c 16 0 26 6 36 12 c 11 7 19 14 19 28 c 0 13 -4 22 -10 32
+                c -7 12 -18 23 -32 26 c -14 3 -26 3 -38 -3 c -13 -7 -24 -17 -28 -31
+                c -4 -14 -3 -28 4 -40 c 7 -13 20 -20 33 -23 c 5 -1 11 -1 16 -1 z"
+                fill="url(#sealG)"/>
+            </g>
+            <circle cx="60" cy="60" r="40" fill="none" stroke="#B99A5B" stroke-width="1.1" opacity="0.55"/>
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#B99A5B" stroke-width="0.6" opacity="0.3"/>
+            <text x="60" y="70" text-anchor="middle" class="seal__text">M L</text>
+          </svg>
+          <span class="seal__crack" aria-hidden="true">
+            <svg viewBox="0 0 120 120" preserveAspectRatio="none">
+              <path d="M58 8 L64 34 L52 52 L66 70 L56 88 L62 112"
+                    fill="none" stroke="#241F14" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M64 34 L86 30 M52 52 L28 48 M66 70 L90 76 M56 88 L34 94"
+                    fill="none" stroke="#241F14" stroke-width="1.6" stroke-linecap="round" opacity="0.75"/>
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div><!-- /.envelope -->
+  </div><!-- /.envelope-scene -->
+
+  <!-- invito ad aprire -->
+  <div class="stage__hint" id="stageHint">
+    <span class="stage__hint-line" aria-hidden="true"></span>
+    <button class="stage__open" id="openBtn" type="button">Tocca per aprire</button>
+    <button class="stage__music" id="stageMusic" type="button" aria-pressed="false">
+      <span aria-hidden="true">♪</span> Accendi la musica
+    </button>
+  </div>
+
+  <!-- ─── L'intro che appare sulla carta aperta ─── -->
+  <section class="intro" id="intro" aria-hidden="true" aria-label="Invito">
+    <div class="intro__paper" aria-hidden="true"></div>
+    <img class="intro__corner intro__corner--tl" src="assets/images/botanical-corner.svg" alt="" aria-hidden="true">
+    <img class="intro__corner intro__corner--br" src="assets/images/botanical-corner.svg" alt="" aria-hidden="true">
+
+    <div class="intro__content">
+      <p class="intro__eyebrow" data-intro="1">Insieme a voi</p>
+
+      <h1 class="intro__names" data-intro="2">
+        <span class="intro__name">Mario</span>
+        <span class="intro__amp">&amp;</span>
+        <span class="intro__name">Lucia</span>
+      </h1>
+
+      <p class="intro__date" data-intro="3">13 Agosto 2027</p>
+
+      <figure class="intro__figure" data-intro="4">
+        <img src="assets/images/venue-illustration.svg"
+             alt="Illustrazione ad acquerello della Tenuta Klopè fra ulivi, agrumi e il mare al tramonto"
+             width="1200" height="760" decoding="async">
+      </figure>
+
+      <p class="intro__venue" data-intro="5">
+        Tenuta Klopè
+        <span>Francavilla Angitola · Calabria</span>
+      </p>
+
+      <p class="intro__text" data-intro="6">
+        Con immensa gioia vi invitiamo a condividere con noi
+        il giorno in cui inizierà il nostro <em>per sempre</em>.
+      </p>
+
+      <button class="intro__enter" id="introEnter" type="button" data-intro="7">
+        <span>Entra nell'invito</span>
+        <svg viewBox="0 0 24 40" aria-hidden="true" width="18" height="30">
+          <path d="M12 2 v30 M5 25 l7 8 7-8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+</div><!-- /#stage -->
+
+<!-- ══════════════════════════════════════════════════════════════════
+     LIVELLO 2 — IL SITO
+     ══════════════════════════════════════════════════════════════════ -->
+<div id="site" class="site" aria-hidden="true">
+
+  <!-- ─── Navigazione ─── -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#hero" aria-label="Mario e Lucia, torna all'inizio">
+      <span>M</span><i>&amp;</i><span>L</span>
+    </a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Navigazione principale">
+      <ul>
+        <li><a href="#storia">Storia</a></li>
+        <li><a href="#ilgiorno">Il giorno</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#galleria">Galleria</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav__burger" id="navBurger" type="button"
+            aria-label="Apri il menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="hero">
+      <div class="hero__layers" aria-hidden="true">
+        <div class="hero__layer hero__layer--sky"  data-parallax="0.12"></div>
+        <div class="hero__layer hero__layer--hills" data-parallax="0.26"></div>
+        <div class="hero__layer hero__layer--fore" data-parallax="0.44"></div>
+        <div class="hero__grade"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Il matrimonio di</p>
+        <h1 class="hero__title">
+          <span class="reveal" style="--d:.08s">Mario</span>
+          <span class="hero__amp reveal" style="--d:.18s">&amp;</span>
+          <span class="reveal" style="--d:.28s">Lucia</span>
+        </h1>
+        <p class="hero__date reveal" style="--d:.42s">13 · 08 · 2027</p>
+        <img class="hero__divider reveal" style="--d:.5s" src="assets/images/divider-olive.svg" alt="" aria-hidden="true" width="400" height="60">
+        <p class="hero__lines reveal" style="--d:.58s">
+          Due vite.<br>Una promessa.<br>Un giorno da ricordare per sempre.
+        </p>
+      </div>
+
+      <a class="hero__scroll" href="#savethedate" aria-label="Scorri verso il basso">
+        <span>Scorri</span>
+        <svg viewBox="0 0 24 48" width="16" height="34" aria-hidden="true">
+          <path d="M12 2 v36" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path class="hero__arrow" d="M5 31 l7 8 7-8" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ─── SAVE THE DATE ─── -->
+    <section class="std" id="savethedate" aria-labelledby="stdTitle">
+      <div class="std__frame reveal">
+        <p class="std__script" id="stdTitle">Save the Date</p>
+        <p class="std__date"><span>13</span><i>Agosto</i><span>2027</span></p>
+        <p class="std__venue">Tenuta Klopè · Francavilla Angitola (VV)</p>
+        <button class="btn btn--outline" id="calendarBtn" type="button">Aggiungi al calendario</button>
+        <p class="std__note">Scarica l'evento in formato <span>.ics</span> — Apple, Google, Outlook.</p>
+      </div>
+    </section>
+
+    <!-- ─── LA NOSTRA STORIA ─── -->
+    <section class="story" id="storia" aria-labelledby="storyTitle">
+      <div class="wrap">
+        <p class="eyebrow reveal">Capitolo primo</p>
+        <h2 class="section-title reveal" id="storyTitle">La nostra storia</h2>
+        <img class="section-divider reveal" src="assets/images/divider-olive.svg" alt="" aria-hidden="true" width="400" height="60">
+
+        <div class="story__text">
+          <p class="reveal">Ci siamo incontrati quasi per caso, senza sapere che quel momento avrebbe cambiato per sempre il corso delle nostre vite.</p>
+          <p class="reveal" style="--d:.1s">Da quel giorno sono iniziati viaggi, risate, sogni, piccoli momenti e grandi avventure.</p>
+          <p class="reveal" style="--d:.2s">Oggi vogliamo condividere con le persone che amiamo il capitolo più bello della nostra storia.</p>
+        </div>
+
+        <ol class="tl tl--story" id="storyTimeline">
+          <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__year">2019</p><p class="tl__label">Il primo incontro</p></li>
+          <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__year">2021</p><p class="tl__label">Il primo viaggio insieme</p></li>
+          <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__year">2024</p><p class="tl__label">La scelta di costruire il nostro futuro</p></li>
+          <li class="tl__item reveal"><span class="tl__dot" aria-hidden="true"></span>
+            <p class="tl__year">2026</p><p class="tl__label">La proposta</p></li>
+          <li class="tl__item reveal"><span class="tl__dot tl__dot--gold" aria-hidden="true"></span>
+            <p class="tl__year">2027</p><p class="tl__label">Il nostro sì</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─── COUNTDOWN ─── -->
+    <section class="countdown" id="countdown" aria-labelledby="cdTitle">
+      <div class="wrap">
+        <h2 class="section-title section-title--light reveal" id="cdTitle">Il grande giorno si avvicina</h2>
+        <div class="cd" role="timer" aria-live="off" aria-label="Countdown al 13 agosto 2027">
+          <div class="cd__unit reveal"><span class="cd__num" id="cdDays">—</span><span class="cd__lab">Giorni</span></div>
+          <span class="cd__sep" aria-hidden="true">·</span>
+          <div class="cd__unit reveal" style="--d:.08s"><span class="cd__num" id="cdHours">—</span><span class="cd__lab">Ore</span></div>
+          <span class="cd__sep" aria-hidden="true">·</span>
+          <div class="cd__unit reveal" style="--d:.16s"><span class="cd__num" id="cdMinutes">—</span><span class="cd__lab">Minuti</span></div>
+          <span class="cd__sep" aria-hidden="true">·</span>
+          <div class="cd__unit reveal" style="--d:.24s"><span class="cd__num" id="cdSeconds">—</span><span class="cd__lab">Secondi</span></div>
+        </div>
+        <p class="cd__caption reveal" id="cdCaption">al 13 agosto 2027</p>
+      </div>
+    </section>
+
+    <!-- ─── IL GRANDE GIORNO ─── -->
+    <section class="day" id="ilgiorno" aria-labelledby="dayTitle">
+      <div class="wrap">
+        <p class="eyebrow reveal">Il programma</p>
+        <h2 class="section-title reveal" id="dayTitle">Il grande giorno</h2>
+        <img class="section-divider reveal" src="assets/images/divider-olive.svg" alt="" aria-hidden="true" width="400" height="60">
+
+        <div class="day__wrap">
+        <ol class="day__list" id="dayList">
+          <li class="day__item reveal">
+            <span class="day__dot" aria-hidden="true"></span>
+            <p class="day__time" data-time="ceremony">16:30</p>
+            <div class="day__body"><h3>Cerimonia</h3><p>Nel giardino degli ulivi, davanti al mare.</p></div>
+          </li>
+          <li class="day__item reveal">
+            <span class="day__dot" aria-hidden="true"></span>
+            <p class="day__time" data-time="aperitif">18:00</p>
+            <div class="day__body"><h3>Aperitivo</h3><p>Bollicine e sapori di Calabria sulla terrazza.</p></div>
+          </li>
+          <li class="day__item reveal">
+            <span class="day__dot" aria-hidden="true"></span>
+            <p class="day__time" data-time="dinner">19:30</p>
+            <div class="day__body"><h3>Cena</h3><p>Tavola imperiale sotto le luci della tenuta.</p></div>
+          </li>
+          <li class="day__item reveal">
+            <span class="day__dot" aria-hidden="true"></span>
+            <p class="day__time" data-time="cake">22:30</p>
+            <div class="day__body"><h3>Taglio della torta</h3><p>Il momento più dolce, insieme a voi.</p></div>
+          </li>
+          <li class="day__item reveal">
+            <span class="day__dot day__dot--gold" aria-hidden="true"></span>
+            <p class="day__time" data-time="party">23:00</p>
+            <div class="day__body"><h3>Festa</h3><p>Si balla fino a notte fonda.</p></div>
+          </li>
+        </ol>
+        <span class="day__line" aria-hidden="true"><i></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── LOCATION ─── -->
+    <section class="loc" id="location" aria-labelledby="locTitle">
+      <div class="loc__media" aria-hidden="true">
+        <div class="loc__img" data-parallax="0.18"></div>
+        <div class="loc__overlay"></div>
+      </div>
+      <div class="loc__content">
+        <p class="eyebrow eyebrow--light reveal">La location</p>
+        <h2 class="section-title section-title--light reveal" id="locTitle">Dove inizierà il nostro per sempre</h2>
+        <p class="loc__name reveal">Tenuta Klopè</p>
+        <p class="loc__addr reveal">Francavilla Angitola (VV) · Calabria</p>
+        <p class="loc__text reveal">Un casale di pietra affacciato sul golfo di Sant'Eufemia, circondato da ulivi secolari e agrumeti. Al tramonto, la luce fa il resto.</p>
+        <a class="btn btn--ghost reveal" id="mapsBtn" href="#" target="_blank" rel="noopener noreferrer">Come arrivare</a>
+      </div>
+    </section>
+
+    <!-- ─── MAPPA ─── -->
+    <section class="map" id="mappa" aria-labelledby="mapTitle">
+      <div class="wrap">
+        <p class="eyebrow reveal">La mappa</p>
+        <h2 class="section-title reveal" id="mapTitle">Come raggiungerci</h2>
+
+        <div class="map__frame reveal">
+          <img src="assets/images/map.svg" alt="Mappa stilizzata: la Tenuta Klopè si trova fra Pizzo, Lamezia Terme e la costa tirrenica"
+               width="1200" height="760" loading="lazy" decoding="async">
+        </div>
+
+        <div class="map__info">
+          <div class="map__col reveal">
+            <h3>In auto</h3>
+            <p>A2 Salerno–Reggio Calabria, uscita <strong>Pizzo</strong>. Poi SP 13 in direzione Francavilla Angitola, circa 9 km.</p>
+          </div>
+          <div class="map__col reveal" style="--d:.08s">
+            <h3>In aereo</h3>
+            <p>Aeroporto di <strong>Lamezia Terme</strong> (SUF), a 35 minuti dalla tenuta. Navetta su richiesta.</p>
+          </div>
+          <div class="map__col reveal" style="--d:.16s">
+            <h3>Coordinate</h3>
+            <p><span class="mono">38°44′ N · 16°14′ E</span><br>Parcheggio interno riservato agli ospiti.</p>
+          </div>
+        </div>
+
+        <div class="map__cta reveal">
+          <a class="btn btn--outline" id="mapsBtn2" href="#" target="_blank" rel="noopener noreferrer">Apri in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RSVP ─── -->
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvpTitle">
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow reveal">Conferma</p>
+        <h2 class="section-title reveal" id="rsvpTitle">Ci sarai?</h2>
+        <p class="rsvp__lead reveal">Il regalo più bello sarà festeggiare insieme a voi.</p>
+        <p class="rsvp__deadline reveal">Vi chiediamo cortesemente di rispondere entro il <strong>30 giugno 2027</strong>.</p>
+
+        <form class="form" id="rsvpForm" novalidate>
+          <div class="field reveal">
+            <label for="rsvpName">Nome e cognome</label>
+            <input type="text" id="rsvpName" name="name" autocomplete="name" required
+                   aria-describedby="rsvpNameErr" placeholder=" ">
+            <p class="field__err" id="rsvpNameErr" role="alert" hidden>Inserisci il tuo nome e cognome.</p>
+          </div>
+
+          <fieldset class="field field--choice reveal" aria-describedby="rsvpAttErr">
+            <legend>Parteciperò</legend>
+            <label class="choice">
+              <input type="radio" name="attending" value="si" required>
+              <span class="choice__box" aria-hidden="true"></span>
+              <span class="choice__label">Sì, non vedo l'ora</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="attending" value="no" required>
+              <span class="choice__box" aria-hidden="true"></span>
+              <span class="choice__label">No, purtroppo non potrò esserci</span>
+            </label>
+            <p class="field__err" id="rsvpAttErr" role="alert" hidden>Seleziona una risposta.</p>
+          </fieldset>
+
+          <div class="field reveal" id="guestsField">
+            <label for="rsvpGuests">Numero invitati</label>
+            <div class="stepper">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Diminuisci il numero di invitati">−</button>
+              <input type="number" id="rsvpGuests" name="guests" min="1" max="10" step="1" value="1" inputmode="numeric">
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Aumenta il numero di invitati">+</button>
+            </div>
+          </div>
+
+          <div class="field reveal">
+            <label for="rsvpDiet">Intolleranze / allergie</label>
+            <input type="text" id="rsvpDiet" name="diet" placeholder=" ">
+          </div>
+
+          <div class="field reveal">
+            <label for="rsvpNotes">Note</label>
+            <textarea id="rsvpNotes" name="notes" rows="3" placeholder=" "></textarea>
+          </div>
+
+          <button class="btn btn--solid reveal" type="submit">Conferma la presenza</button>
+          <p class="form__note reveal">Demo dimostrativa: la risposta resta salvata solo su questo dispositivo.</p>
+        </form>
+      </div>
+
+      <!-- overlay di ringraziamento -->
+      <div class="thanks" id="thanks" role="dialog" aria-modal="true" aria-labelledby="thanksTitle" hidden>
+        <div class="thanks__paper">
+          <p class="thanks__script">Grazie di cuore</p>
+          <h3 class="thanks__title" id="thanksTitle">Grazie, <span id="thanksName">amico</span>.</h3>
+          <p class="thanks__text" id="thanksText">Non vediamo l'ora di festeggiare insieme a te.</p>
+          <img class="thanks__divider" src="assets/images/divider-olive.svg" alt="" aria-hidden="true" width="400" height="60">
+          <p class="thanks__sign">Mario &amp; Lucia</p>
+          <button class="btn btn--outline btn--sm" id="thanksClose" type="button">Chiudi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DRESS CODE ─── -->
+    <section class="dress" id="dresscode" aria-labelledby="dressTitle">
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow reveal">Dress code</p>
+        <h2 class="section-title reveal" id="dressTitle">Formal Elegance</h2>
+        <p class="dress__text reveal">Vi chiediamo di accompagnarci in questa giornata speciale con un tocco di eleganza.</p>
+
+        <div class="dress__icons" aria-hidden="true">
+          <svg class="reveal" viewBox="0 0 80 110" width="80" height="110" role="img">
+            <title>Abito lungo</title>
+            <path d="M40 12 a7 7 0 1 1 0.1 0z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M30 26 q10 8 20 0 l6 16 -8 6 q-8 4 -16 0 l-8 -6 z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M28 48 q12 6 24 0 l14 54 q-26 8 -52 0 z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          </svg>
+          <svg class="reveal" style="--d:.08s" viewBox="0 0 80 110" width="80" height="110" role="img">
+            <title>Smoking</title>
+            <path d="M26 24 l14 10 14 -10 12 8 v66 h-52 v-66 z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M40 34 l-9 64 M40 34 l9 64" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M40 34 l-5 8 5 8 5 -8 z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          </svg>
+          <svg class="reveal" style="--d:.16s" viewBox="0 0 80 110" width="80" height="110" role="img">
+            <title>Sandali eleganti</title>
+            <path d="M24 92 h32 a4 4 0 0 0 4 -4 v-6 l-10 -6 -12 4 -14 4 z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M50 76 l6 -46" fill="none" stroke="currentColor" stroke-width="1.1"/>
+            <path d="M36 84 q10 -20 20 -30" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          </svg>
+        </div>
+
+        <p class="dress__hint reveal">
+          Tono su tono con il paesaggio: avorio, salvia, oliva, terracotta.
+          Sconsigliati i tacchi troppo sottili — si cammina sul prato.
+        </p>
+
+        <ul class="dress__swatches reveal" aria-label="Palette cromatica suggerita">
+          <li style="--c:#F7F3EA"><span></span>Ivory</li>
+          <li style="--c:#E8DCC8"><span></span>Champagne</li>
+          <li style="--c:#8C9A83"><span></span>Sage</li>
+          <li style="--c:#3A4232"><span></span>Deep Olive</li>
+          <li style="--c:#C89B7B"><span></span>Terracotta</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── LISTA NOZZE ─── -->
+    <section class="gift" id="lista" aria-labelledby="giftTitle">
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow reveal">Lista nozze</p>
+        <h2 class="section-title reveal" id="giftTitle">Il vostro regalo più grande?<br><em>La vostra presenza.</em></h2>
+        <p class="gift__text reveal">Se desiderate accompagnarci anche nella costruzione dei nostri prossimi ricordi, abbiamo scelto di destinare la nostra lista nozze al viaggio che sogniamo da sempre.</p>
+        <button class="btn btn--outline reveal" id="giftBtn" type="button">Scopri la lista nozze</button>
+      </div>
+    </section>
+
+    <!-- ─── GALLERIA ─── -->
+    <section class="gal" id="galleria" aria-labelledby="galTitle">
+      <div class="wrap">
+        <p class="eyebrow reveal">Momenti</p>
+        <h2 class="section-title reveal" id="galTitle">Galleria</h2>
+        <p class="gal__note reveal">Tocca un'immagine per aprirla a schermo intero.</p>
+      </div>
+
+      <div class="gal__grid" id="galGrid">
+        <figure class="gal__item gal__item--a reveal">
+          <button type="button" class="gal__btn" data-index="0" aria-label="Apri: gli sposi in controluce sulla terrazza">
+            <img src="assets/images/gallery-1.svg" alt="Gli sposi in controluce sulla terrazza al tramonto" loading="lazy" decoding="async" width="900" height="1250">
+          </button>
+          <figcaption><span>01</span> Il tramonto sulla terrazza</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--b reveal">
+          <button type="button" class="gal__btn" data-index="1" aria-label="Apri: filari di ulivi">
+            <img src="assets/images/gallery-2.svg" alt="Filari di ulivi nella campagna calabrese" loading="lazy" decoding="async" width="1500" height="1000">
+          </button>
+          <figcaption><span>02</span> Gli ulivi della tenuta</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--c reveal">
+          <button type="button" class="gal__btn" data-index="2" aria-label="Apri: ramo di limoni">
+            <img src="assets/images/gallery-3.svg" alt="Ramo di limoni mediterranei" loading="lazy" decoding="async" width="1100" height="1100">
+          </button>
+          <figcaption><span>03</span> Agrumi di Calabria</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--d reveal">
+          <button type="button" class="gal__btn" data-index="3" aria-label="Apri: tavola imperiale sotto gli ulivi">
+            <img src="assets/images/gallery-4.svg" alt="Tavola imperiale apparecchiata sotto gli ulivi" loading="lazy" decoding="async" width="1800" height="780">
+          </button>
+          <figcaption><span>04</span> La tavola imperiale</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--e reveal">
+          <button type="button" class="gal__btn" data-index="4" aria-label="Apri: orizzonte sul Tirreno">
+            <img src="assets/images/gallery-5.svg" alt="Orizzonte sul mar Tirreno all'imbrunire" loading="lazy" decoding="async" width="900" height="1250">
+          </button>
+          <figcaption><span>05</span> Il Tirreno all'imbrunire</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--f reveal">
+          <button type="button" class="gal__btn" data-index="5" aria-label="Apri: loggia della tenuta">
+            <img src="assets/images/gallery-6.svg" alt="Loggia della tenuta con vista sul mare" loading="lazy" decoding="async" width="900" height="1250">
+          </button>
+          <figcaption><span>06</span> La loggia</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--g reveal">
+          <button type="button" class="gal__btn" data-index="6" aria-label="Apri: bouquet di fiori di campo">
+            <img src="assets/images/gallery-7.svg" alt="Bouquet di fiori di campo mediterranei" loading="lazy" decoding="async" width="1100" height="1100">
+          </button>
+          <figcaption><span>07</span> Fiori di campo</figcaption>
+        </figure>
+        <figure class="gal__item gal__item--h reveal">
+          <button type="button" class="gal__btn" data-index="7" aria-label="Apri: la costa calabrese al crepuscolo">
+            <img src="assets/images/gallery-8.svg" alt="La costa calabrese al crepuscolo" loading="lazy" decoding="async" width="1500" height="1000">
+          </button>
+          <figcaption><span>08</span> La costa, al crepuscolo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── SCHERMATA FINALE ─── -->
+    <section class="finale" id="finale" aria-labelledby="finTitle">
+      <div class="finale__petals" id="petals" aria-hidden="true"></div>
+      <div class="finale__content">
+        <h2 class="finale__names reveal" id="finTitle">Mario <i>&amp;</i> Lucia</h2>
+        <p class="finale__date reveal" style="--d:.12s">13 · 08 · 2027</p>
+        <img class="finale__divider reveal" style="--d:.2s" src="assets/images/divider-olive.svg" alt="" aria-hidden="true" width="400" height="60">
+        <p class="finale__text reveal" style="--d:.28s">Il nostro giorno più bello<br>sarà ancora più bello con voi.</p>
+        <p class="finale__sign reveal" style="--d:.4s">Con amore,<br><span>Mario &amp; Lucia</span></p>
+        <!-- Easter egg: il piccolo segreto botanico -->
+        <button class="secret" id="secret" type="button" aria-label="Dettaglio botanico">
+          <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+            <path d="M20 34 C 20 22, 14 14, 4 10 C 6 24, 12 32, 20 34 Z" fill="currentColor"/>
+            <path d="M20 34 C 20 20, 26 12, 36 8 C 34 22, 28 31, 20 34 Z" fill="currentColor" opacity="0.75"/>
+            <path d="M20 38 v-10" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="foot">
+    <p class="foot__mono"><span>M</span><i>&amp;</i><span>L</span></p>
+    <p class="foot__line">Mario Rossi &amp; Lucia Bianchi · 13 agosto 2027 · Tenuta Klopè</p>
+    <p class="foot__badge">Wedding Invitation Experience · Demo</p>
+  </footer>
+</div><!-- /#site -->
+
+<!-- ══════════════════ Pulsante musica ══════════════════ -->
+<button class="music" id="musicBtn" type="button" aria-pressed="false" aria-label="Attiva la musica di sottofondo" hidden>
+  <span class="music__icon" aria-hidden="true">♪</span>
+  <span class="music__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+<audio id="audio" loop preload="none"></audio>
+
+<!-- ══════════════════ Modal lista nozze ══════════════════ -->
+<div class="modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel">
+    <button class="modal__close" type="button" data-close aria-label="Chiudi">×</button>
+    <p class="modal__script">Con gratitudine</p>
+    <h3 class="modal__title" id="giftModalTitle">La nostra lista nozze</h3>
+    <p class="modal__text">Se desiderate contribuire al viaggio che sogniamo da sempre, potete farlo con un pensiero su questo conto.</p>
+    <div class="iban">
+      <p class="iban__label">IBAN</p>
+      <p class="iban__code" id="ibanCode">IT00 X000 0000 0000 0000 000</p>
+      <p class="iban__holder">Intestato a Mario Rossi &amp; Lucia Bianchi</p>
+      <button class="btn btn--outline btn--sm" id="ibanCopy" type="button">Copia IBAN</button>
+    </div>
+    <p class="modal__disclaimer">Dato dimostrativo — non utilizzare.</p>
+  </div>
+</div>
+
+<!-- ══════════════════ Lightbox galleria ══════════════════ -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Galleria a schermo intero" hidden>
+  <button class="lb__close" id="lbClose" type="button" aria-label="Chiudi la galleria">×</button>
+  <button class="lb__nav lb__nav--prev" id="lbPrev" type="button" aria-label="Immagine precedente">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 4 L7 12 l8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <figure class="lb__stage">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb__nav lb__nav--next" id="lbNext" type="button" aria-label="Immagine successiva">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 4 l8 8 -8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <p class="lb__count" id="lbCount"></p>
+</div>
+
+<!-- ══════════════════ Toast ══════════════════ -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

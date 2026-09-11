@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1250" width="900" height="1250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gli sposi in controluce sulla terrazza al tramonto">
+  <title>Gli sposi in controluce sulla terrazza al tramonto</title>
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A423C"/>
+      <stop offset="52%" stop-color="#B98A64"/>
+      <stop offset="100%" stop-color="#EFCB9A"/>
+    </linearGradient>
+    <radialGradient id="gl1" cx="0.62" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#FBEBC8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FBEBC8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sf1"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="gr1" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="1" result="g"/>
+      <feColorMatrix in="g" type="saturate" values="0"/>
+    </filter>
+    <filter id="wa1" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="3" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1250" fill="url(#sky1)"/>
+  <ellipse cx="520" cy="760" rx="520" ry="360" fill="url(#gl1)"/>
+  <circle cx="536" cy="744" r="58" fill="#FDF2D8" opacity="0.92"/>
+  <rect y="800" width="900" height="120" fill="#A98A69" opacity="0.55"/>
+  <path d="M0 806 L160 782 L320 802 L470 786 L600 806 L600 830 L0 830 Z" fill="#7A6A58" filter="url(#sf1)"/>
+  <path d="M0 940 C 220 900, 520 928, 900 892 L900 1250 L0 1250 Z" fill="#2E2B24"/>
+  <!-- balaustra -->
+  <g fill="#241F1A" opacity="0.9">
+    <rect x="0" y="930" width="900" height="14"/>
+    <rect x="0" y="1040" width="900" height="12"/>
+    <g><rect x="30" y="944" width="16" height="96" rx="8"/><rect x="94" y="944" width="16" height="96" rx="8"/><rect x="158" y="944" width="16" height="96" rx="8"/><rect x="222" y="944" width="16" height="96" rx="8"/><rect x="286" y="944" width="16" height="96" rx="8"/><rect x="350" y="944" width="16" height="96" rx="8"/><rect x="414" y="944" width="16" height="96" rx="8"/><rect x="478" y="944" width="16" height="96" rx="8"/><rect x="542" y="944" width="16" height="96" rx="8"/><rect x="606" y="944" width="16" height="96" rx="8"/><rect x="670" y="944" width="16" height="96" rx="8"/><rect x="734" y="944" width="16" height="96" rx="8"/><rect x="798" y="944" width="16" height="96" rx="8"/><rect x="862" y="944" width="16" height="96" rx="8"/></g>
+  </g>
+  <!-- coppia in controluce -->
+  <g fill="#1C1914">
+    <g transform="translate(392,700)">
+      <circle cx="0" cy="0" r="34"/>
+      <path d="M-40 42 C -52 120, -46 210, -38 300 L44 300 C 52 200, 50 110, 36 42 Z"/>
+      <path d="M28 74 C 66 96, 78 128, 70 156" stroke="#1C1914" stroke-width="17" fill="none" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(500,706)">
+      <circle cx="0" cy="-4" r="31"/>
+      <path d="M-16 -30 c -22 -6 -30 22 -12 30" opacity="0.9"/>
+      <path d="M-34 36 C -60 130, -74 240, -66 306 L62 306 C 66 210, 44 110, 30 36 Z"/>
+      <path d="M-26 70 C -64 92, -74 126, -66 152" stroke="#1C1914" stroke-width="15" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g opacity="0.8"><path d="M180 934 q 260 -70 540 -26" stroke="#C9A46A" stroke-width="2" fill="none"/>
+    <g fill="#F7E2AC"><circle cx="250" cy="918" r="5"/><circle cx="350" cy="904" r="5"/><circle cx="450" cy="898" r="5"/><circle cx="550" cy="900" r="5"/><circle cx="650" cy="910" r="5"/></g>
+  </g>
+  <rect width="900" height="1250" filter="url(#gr1)" opacity="0.13"/>
+</svg>

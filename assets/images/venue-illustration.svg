@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-label="Illustrazione ad acquerello della Tenuta Klopè fra ulivi, agrumi e mare al tramonto">
+  <title>Tenuta Klopè — acquerello botanico</title>
+  <defs>
+    <!-- Watercolour bleed: turbulence + displacement gives the pigment its ragged edge -->
+    <filter id="wc" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="4" seed="4" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="1.1"/>
+    </filter>
+    <filter id="wcSoft" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="0.7"/>
+    </filter>
+    <filter id="wcFine" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="19" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- Granulation: the pigment pooling you get on cotton paper -->
+    <filter id="granulate" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="8" result="g"/>
+      <feComposite in="g" in2="SourceAlpha" operator="in" result="gi"/>
+      <feColorMatrix in="gi" type="matrix" values="0 0 0 0 0.25  0 0 0 0 0.24  0 0 0 0 0.18  0 0 0 0.35 0"/>
+      <feBlend in="SourceGraphic" in2="gi" mode="multiply"/>
+    </filter>
+
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFE2D2"/>
+      <stop offset="34%" stop-color="#F2DCC2"/>
+      <stop offset="62%" stop-color="#EFCBA6"/>
+      <stop offset="86%" stop-color="#E7B78F"/>
+      <stop offset="100%" stop-color="#DFAF8B"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F7E2BC" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#F0CFA0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#E9BE8C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9FB3AE"/>
+      <stop offset="50%" stop-color="#8FA8A6"/>
+      <stop offset="100%" stop-color="#A6B6AB"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A9B4A0"/>
+      <stop offset="100%" stop-color="#93A38D"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8D9C81"/>
+      <stop offset="100%" stop-color="#74855F"/>
+    </linearGradient>
+    <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B9B489"/>
+      <stop offset="100%" stop-color="#9CA173"/>
+    </linearGradient>
+    <linearGradient id="wallG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F5EADA"/>
+      <stop offset="60%" stop-color="#EEDFC9"/>
+      <stop offset="100%" stop-color="#E2CFB5"/>
+    </linearGradient>
+
+    <!-- Soft deckled vignette so the wash fades into the paper -->
+    <radialGradient id="fade" cx="0.5" cy="0.52" r="0.72">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="62%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="88%" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="deckle">
+      <rect width="1200" height="760" fill="url(#fade)" filter="url(#wcSoft)"/>
+    </mask>
+
+    <!-- Reusable foliage clusters -->
+    <g id="oliveLeaf">
+      <ellipse cx="0" cy="0" rx="13" ry="4.4" fill="#6F7F5C"/>
+    </g>
+    <g id="lemon">
+      <ellipse cx="0" cy="0" rx="13" ry="15.5" fill="#E9C66E"/>
+      <ellipse cx="-4" cy="-5" rx="4.5" ry="5" fill="#F3DA9A" opacity="0.8"/>
+    </g>
+    <g id="orangeF">
+      <circle cx="0" cy="0" r="14" fill="#DFA062"/>
+      <circle cx="-4.5" cy="-4.5" r="4.5" fill="#EDBE8C" opacity="0.75"/>
+    </g>
+  </defs>
+
+  <g mask="url(#deckle)">
+    <!-- SKY -->
+    <rect width="1200" height="470" fill="url(#sky)"/>
+    <g filter="url(#wc)" opacity="0.5">
+      <ellipse cx="250" cy="120" rx="300" ry="60" fill="#F3D9BE"/>
+      <ellipse cx="880" cy="90" rx="340" ry="52" fill="#EFD3B6"/>
+      <ellipse cx="600" cy="210" rx="420" ry="46" fill="#EEC9A2" opacity="0.7"/>
+    </g>
+    <circle cx="905" cy="352" r="210" fill="url(#sunGlow)"/>
+    <circle cx="905" cy="352" r="46" fill="#F6E6C4" opacity="0.85" filter="url(#wcFine)"/>
+
+    <!-- SEA -->
+    <g filter="url(#wc)">
+      <rect x="-20" y="352" width="1240" height="98" fill="url(#seaG)" opacity="0.9"/>
+    </g>
+    <g opacity="0.55" filter="url(#wcFine)">
+      <rect x="60" y="372" width="220" height="3" fill="#F0DFC6"/>
+      <rect x="360" y="392" width="300" height="3" fill="#F0DFC6"/>
+      <rect x="760" y="378" width="260" height="3" fill="#F4E4CB"/>
+      <rect x="180" y="412" width="180" height="3" fill="#EDDCC2"/>
+      <rect x="640" y="424" width="240" height="3" fill="#EDDCC2"/>
+    </g>
+    <!-- sun path on water -->
+    <g opacity="0.45" filter="url(#wcFine)">
+      <rect x="866" y="356" width="78" height="94" fill="#F5E3C2"/>
+    </g>
+
+    <!-- DISTANT HEADLAND -->
+    <g filter="url(#wc)" opacity="0.85">
+      <path d="M-20 358 L120 330 L240 348 L330 332 L430 352 L430 372 L-20 372 Z" fill="url(#hillFar)"/>
+      <path d="M760 350 L860 336 L980 346 L1100 328 L1220 344 L1220 370 L760 370 Z" fill="url(#hillFar)" opacity="0.8"/>
+    </g>
+
+    <!-- MIDDLE HILLS -->
+    <g filter="url(#wc)">
+      <path d="M-20 452 C 120 408, 260 430, 380 416 C 520 400, 640 428, 780 412 C 900 398, 1040 424, 1220 404 L1220 540 L-20 540 Z" fill="url(#hillMid)" opacity="0.92"/>
+    </g>
+
+    <!-- CYPRESSES on the ridge -->
+    <g filter="url(#wcSoft)" opacity="0.9">
+      <path d="M196 432 c8 0 12 -46 0 -78 c-12 32 -8 78 0 78 z" fill="#4E5D44"/>
+      <path d="M228 436 c7 0 11 -40 0 -68 c-11 28 -7 68 0 68 z" fill="#56654B"/>
+      <path d="M1010 428 c8 0 12 -44 0 -74 c-12 30 -8 74 0 74 z" fill="#4E5D44"/>
+      <path d="M1040 432 c7 0 10 -36 0 -62 c-10 26 -7 62 0 62 z" fill="#586849"/>
+    </g>
+
+    <!-- GROUND -->
+    <g filter="url(#wc)">
+      <path d="M-20 520 C 200 496, 420 512, 600 502 C 800 492, 1000 512, 1220 496 L1220 780 L-20 780 Z" fill="url(#groundG)" opacity="0.9"/>
+    </g>
+
+    <!-- ===== THE VILLA ===== -->
+    <g filter="url(#wcSoft)">
+      <!-- side wing -->
+      <rect x="392" y="434" width="120" height="92" fill="#EBDCC4"/>
+      <path d="M384 436 L520 436 L508 418 L396 418 Z" fill="#C08A6E" opacity="0.9"/>
+      <!-- main body -->
+      <rect x="500" y="396" width="210" height="132" fill="url(#wallG)"/>
+      <path d="M488 398 L722 398 L706 372 L504 372 Z" fill="#BE8568"/>
+      <!-- roof shading -->
+      <path d="M488 398 L722 398 L722 404 L488 404 Z" fill="#A9765C" opacity="0.55"/>
+      <!-- tower -->
+      <rect x="690" y="356" width="62" height="172" fill="#F1E3CC"/>
+      <path d="M682 358 L760 358 L748 338 L694 338 Z" fill="#B8805F"/>
+      <!-- east wing -->
+      <rect x="742" y="448" width="96" height="80" fill="#E9DAC1"/>
+      <path d="M734 450 L848 450 L836 432 L744 432 Z" fill="#C08A6E" opacity="0.88"/>
+    </g>
+    <!-- arches, windows, shutters -->
+    <g opacity="0.85" filter="url(#wcFine)">
+      <path d="M524 528 v-48 a17 17 0 0 1 34 0 v48 z" fill="#7E8770" opacity="0.55"/>
+      <path d="M580 528 v-48 a17 17 0 0 1 34 0 v48 z" fill="#7E8770" opacity="0.55"/>
+      <path d="M636 528 v-48 a17 17 0 0 1 34 0 v48 z" fill="#7E8770" opacity="0.55"/>
+      <rect x="528" y="418" width="24" height="30" rx="2" fill="#6E7A63" opacity="0.5"/>
+      <rect x="590" y="418" width="24" height="30" rx="2" fill="#6E7A63" opacity="0.5"/>
+      <rect x="652" y="418" width="24" height="30" rx="2" fill="#6E7A63" opacity="0.5"/>
+      <rect x="706" y="384" width="28" height="34" rx="2" fill="#6E7A63" opacity="0.5"/>
+      <rect x="708" y="440" width="24" height="30" rx="2" fill="#6E7A63" opacity="0.45"/>
+      <rect x="416" y="458" width="22" height="28" rx="2" fill="#6E7A63" opacity="0.45"/>
+      <rect x="462" y="458" width="22" height="28" rx="2" fill="#6E7A63" opacity="0.45"/>
+      <path d="M762 528 v-40 a14 14 0 0 1 28 0 v40 z" fill="#7E8770" opacity="0.5"/>
+      <path d="M800 528 v-40 a14 14 0 0 1 28 0 v40 z" fill="#7E8770" opacity="0.5"/>
+    </g>
+    <!-- warm light in the windows -->
+    <g opacity="0.55">
+      <rect x="530" y="420" width="20" height="26" fill="#F5DFA8"/>
+      <rect x="654" y="420" width="20" height="26" fill="#F5DFA8"/>
+      <rect x="708" y="386" width="24" height="30" fill="#F5DFA8"/>
+    </g>
+    <!-- pergola & festoon lights -->
+    <g opacity="0.7">
+      <path d="M300 520 q 90 -34 190 -14" stroke="#B99A5B" stroke-width="1.6" fill="none"/>
+      <path d="M300 520 v-40 M348 506 v-34 M396 498 v-30 M444 500 v-30 M490 506 v-34" stroke="#8A8468" stroke-width="2" opacity="0.6"/>
+      <g fill="#F0D79A">
+        <circle cx="322" cy="512" r="3"/><circle cx="360" cy="503" r="3"/><circle cx="400" cy="498" r="3"/>
+        <circle cx="440" cy="498" r="3"/><circle cx="474" cy="501" r="3"/>
+      </g>
+    </g>
+
+    <!-- ===== OLIVE GROVE ===== -->
+    <g filter="url(#wcSoft)">
+      <g transform="translate(180,520)">
+        <path d="M-3 0 v-46 c-4 -12 4 -16 6 -4 v50 z" fill="#7A6A52"/>
+        <g opacity="0.92">
+          <ellipse cx="0" cy="-62" rx="46" ry="30" fill="#77875F"/>
+          <ellipse cx="-22" cy="-52" rx="28" ry="20" fill="#68794F"/>
+          <ellipse cx="24" cy="-54" rx="26" ry="19" fill="#84936B"/>
+        </g>
+      </g>
+      <g transform="translate(292,528) scale(0.82)">
+        <path d="M-3 0 v-44 c-4 -12 4 -16 6 -4 v48 z" fill="#7A6A52"/>
+        <ellipse cx="0" cy="-58" rx="42" ry="27" fill="#71825A"/>
+        <ellipse cx="20" cy="-50" rx="24" ry="17" fill="#879668"/>
+      </g>
+      <g transform="translate(930,532) scale(0.95)">
+        <path d="M-3 0 v-46 c-4 -12 4 -16 6 -4 v50 z" fill="#7A6A52"/>
+        <ellipse cx="0" cy="-60" rx="44" ry="28" fill="#74855C"/>
+        <ellipse cx="-20" cy="-50" rx="26" ry="18" fill="#66774D"/>
+        <ellipse cx="22" cy="-52" rx="24" ry="17" fill="#8A9A6E"/>
+      </g>
+      <g transform="translate(1052,524) scale(0.78)">
+        <path d="M-3 0 v-44 c-4 -12 4 -16 6 -4 v48 z" fill="#7A6A52"/>
+        <ellipse cx="0" cy="-56" rx="40" ry="26" fill="#78895F"/>
+      </g>
+    </g>
+
+    <!-- low mediterranean scrub -->
+    <g opacity="0.7" filter="url(#wcSoft)">
+      <ellipse cx="98" cy="546" rx="66" ry="18" fill="#788A62"/>
+      <ellipse cx="380" cy="548" rx="54" ry="14" fill="#7E9067"/>
+      <ellipse cx="660" cy="546" rx="72" ry="16" fill="#75875F"/>
+      <ellipse cx="1130" cy="548" rx="70" ry="18" fill="#7B8D64"/>
+    </g>
+  </g>
+
+  <!-- ===== BOTANICAL FOREGROUND (framing, drawn over the deckle) ===== -->
+  <!-- Citrus branch, lower left -->
+  <g filter="url(#granulate)" opacity="0.96">
+    <path d="M18 742 C 90 700, 130 640, 150 566" stroke="#5F6E4C" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M92 676 C 140 660, 176 668, 206 690" stroke="#5F6E4C" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M138 604 C 178 582, 214 584, 244 600" stroke="#5F6E4C" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g fill="#54663F">
+      <ellipse cx="70" cy="712" rx="30" ry="13" transform="rotate(-28 70 712)"/>
+      <ellipse cx="112" cy="652" rx="28" ry="12" transform="rotate(-52 112 652)"/>
+      <ellipse cx="166" cy="676" rx="30" ry="12.5" transform="rotate(14 166 676)"/>
+      <ellipse cx="128" cy="576" rx="26" ry="11" transform="rotate(-64 128 576)"/>
+      <ellipse cx="198" cy="600" rx="27" ry="11" transform="rotate(8 198 600)"/>
+      <ellipse cx="46" cy="672" rx="24" ry="10" transform="rotate(-40 46 672)"/>
+    </g>
+    <g fill="#66784E" opacity="0.75">
+      <ellipse cx="88" cy="700" rx="22" ry="9" transform="rotate(-14 88 700)"/>
+      <ellipse cx="150" cy="628" rx="22" ry="9" transform="rotate(-34 150 628)"/>
+      <ellipse cx="226" cy="612" rx="20" ry="8" transform="rotate(20 226 612)"/>
+    </g>
+    <g transform="translate(196,700)"><use href="#lemon"/></g>
+    <g transform="translate(238,646) scale(0.86)"><use href="#lemon"/></g>
+    <g transform="translate(120,732) scale(0.92)"><use href="#orangeF"/></g>
+  </g>
+
+  <!-- Olive branch, lower right -->
+  <g filter="url(#granulate)" opacity="0.96">
+    <path d="M1184 748 C 1120 712, 1076 656, 1058 586" stroke="#61704E" stroke-width="4.6" fill="none" stroke-linecap="round"/>
+    <path d="M1108 672 C 1062 656, 1026 664, 998 686" stroke="#61704E" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    <path d="M1064 608 C 1024 590, 992 594, 964 612" stroke="#61704E" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <g fill="#6F7F5C">
+      <ellipse cx="1132" cy="716" rx="29" ry="11" transform="rotate(26 1132 716)"/>
+      <ellipse cx="1092" cy="652" rx="28" ry="11" transform="rotate(52 1092 652)"/>
+      <ellipse cx="1036" cy="678" rx="29" ry="11" transform="rotate(-14 1036 678)"/>
+      <ellipse cx="1074" cy="580" rx="25" ry="10" transform="rotate(64 1074 580)"/>
+      <ellipse cx="1006" cy="606" rx="26" ry="10" transform="rotate(-10 1006 606)"/>
+      <ellipse cx="1164" cy="678" rx="24" ry="9.5" transform="rotate(40 1164 678)"/>
+    </g>
+    <g fill="#8A9873" opacity="0.8">
+      <ellipse cx="1112" cy="700" rx="21" ry="8" transform="rotate(12 1112 700)"/>
+      <ellipse cx="1052" cy="632" rx="21" ry="8" transform="rotate(34 1052 632)"/>
+      <ellipse cx="978" cy="634" rx="19" ry="7.5" transform="rotate(-22 978 634)"/>
+    </g>
+    <g fill="#4A5540">
+      <ellipse cx="1046" cy="702" rx="7.5" ry="10"/>
+      <ellipse cx="1080" cy="624" rx="7" ry="9.5"/>
+      <ellipse cx="1002" cy="648" rx="6.5" ry="9"/>
+    </g>
+  </g>
+
+  <!-- Small wildflowers -->
+  <g opacity="0.85" filter="url(#wcFine)">
+    <g transform="translate(300,700)">
+      <path d="M0 30 C -4 12, 2 4, 0 -6" stroke="#6C7B55" stroke-width="2" fill="none"/>
+      <g fill="#E4CBBD"><circle cx="0" cy="-10" r="5"/><circle cx="-8" cy="-4" r="4.4"/><circle cx="8" cy="-4" r="4.4"/><circle cx="-4" cy="4" r="4"/><circle cx="5" cy="4" r="4"/></g>
+      <circle cx="0" cy="-2" r="3" fill="#D9A96F"/>
+    </g>
+    <g transform="translate(340,716) scale(0.8)">
+      <path d="M0 30 C 4 12, -2 4, 0 -6" stroke="#6C7B55" stroke-width="2.4" fill="none"/>
+      <g fill="#F0E2D4"><circle cx="0" cy="-10" r="5"/><circle cx="-8" cy="-4" r="4.4"/><circle cx="8" cy="-4" r="4.4"/><circle cx="-4" cy="4" r="4"/><circle cx="5" cy="4" r="4"/></g>
+      <circle cx="0" cy="-2" r="3" fill="#C9975F"/>
+    </g>
+    <g transform="translate(890,712) scale(0.9)">
+      <path d="M0 30 C -4 12, 2 4, 0 -6" stroke="#6C7B55" stroke-width="2.2" fill="none"/>
+      <g fill="#E7D3C4"><circle cx="0" cy="-10" r="5"/><circle cx="-8" cy="-4" r="4.4"/><circle cx="8" cy="-4" r="4.4"/><circle cx="-4" cy="4" r="4"/><circle cx="5" cy="4" r="4"/></g>
+      <circle cx="0" cy="-2" r="3" fill="#D9A96F"/>
+    </g>
+  </g>
+
+  <!-- swallows -->
+  <g stroke="#6E6A58" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round">
+    <path d="M300 196 q 10 -9 20 0 q 10 -9 20 0"/>
+    <path d="M362 166 q 7 -6 14 0 q 7 -6 14 0"/>
+    <path d="M254 152 q 6 -5 12 0 q 6 -5 12 0"/>
+  </g>
+</svg>

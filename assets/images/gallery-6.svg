@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1250" width="900" height="1250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Loggia della tenuta con vista sul mare">
+  <title>Loggia della tenuta con vista sul mare</title>
+  <defs>
+    <linearGradient id="sky6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7E6A52"/>
+      <stop offset="52%" stop-color="#C39A6E"/>
+      <stop offset="100%" stop-color="#E9CB9E"/>
+    </linearGradient>
+    <radialGradient id="gl6" cx="0.62" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#FBEBC8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FBEBC8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sf6"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="gr6" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="6" result="g"/>
+      <feColorMatrix in="g" type="saturate" values="0"/>
+    </filter>
+    <filter id="wa6" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="18" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1250" fill="url(#sky6)"/>
+  <rect width="900" height="1250" fill="#EDE2CC"/>
+  <rect x="0" y="0" width="900" height="1250" fill="#E4D7BD"/>
+  <!-- vista attraverso l'arco -->
+  <path d="M180 1150 V520 a270 270 0 0 1 540 0 v630 z" fill="url(#sky6)"/>
+  <g clip-path="url(#a6)">
+    <clipPath id="a6"><path d="M180 1150 V520 a270 270 0 0 1 540 0 v630 z"/></clipPath>
+    <ellipse cx="560" cy="760" rx="420" ry="260" fill="url(#gl6)"/>
+    <circle cx="566" cy="742" r="46" fill="#FDF2D6" opacity="0.9"/>
+    <rect x="180" y="790" width="540" height="70" fill="#A18A6C" opacity="0.8"/>
+    <path d="M180 786 L300 764 L420 784 L540 766 L660 788 L720 776 L720 806 L180 806 Z" fill="#7A6D58"/>
+    <path d="M180 900 C 340 862, 520 892, 720 860 L720 1150 L180 1150 Z" fill="#4D5340"/>
+    <g fill="#2F3527"><path d="M300 880 c11 0 16 -54 0 -94 c-16 40 -11 94 0 94 z"/><path d="M620 872 c10 0 15 -50 0 -88 c-15 38 -10 88 0 88 z"/></g>
+  </g>
+  <!-- muratura -->
+  <path d="M0 0 h900 v1250 h-900 z M180 1150 V520 a270 270 0 0 1 540 0 v630 z" fill="#E8DCC4" fill-rule="evenodd"/>
+  <path d="M180 520 a270 270 0 0 1 540 0 l-34 0 a236 236 0 0 0 -472 0 z" fill="#D8C8AA"/>
+  <g opacity="0.3" fill="#C6B394">
+    <rect x="0" y="1150" width="900" height="16"/><rect x="0" y="200" width="900" height="10"/>
+    <rect x="120" y="520" width="22" height="630"/><rect x="758" y="520" width="22" height="630"/>
+  </g>
+  <g opacity="0.55">
+    <path d="M60 120 C 120 190, 118 300, 96 400" stroke="#5E6B48" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <g fill="#56653F"><ellipse cx="44" cy="160" rx="46" ry="17" transform="rotate(-30 44 160)"/><ellipse cx="118" cy="212" rx="44" ry="16" transform="rotate(26 118 212)"/><ellipse cx="66" cy="268" rx="42" ry="15" transform="rotate(-40 66 268)"/><ellipse cx="128" cy="320" rx="40" ry="15" transform="rotate(30 128 320)"/><ellipse cx="78" cy="372" rx="38" ry="14" transform="rotate(-34 78 372)"/></g>
+  </g>
+  <rect width="900" height="1250" filter="url(#gr6)" opacity="0.13"/>
+</svg>

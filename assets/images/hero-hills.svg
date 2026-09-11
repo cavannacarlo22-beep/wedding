@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1200" width="1920" height="1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Profilo delle colline calabresi sul mare">
+  <defs>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7E6E5E" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#6B5C4E" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#52503F"/>
+      <stop offset="100%" stop-color="#41432F"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2A17C" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#9C8B72" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7C7461" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="sft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+  <!-- sea -->
+  <rect y="742" width="1920" height="200" fill="url(#sea)"/>
+  <g opacity="0.2" fill="#F4DDB6">
+    <rect x="1080" y="760" width="240" height="4"/><rect x="1140" y="790" width="180" height="4"/>
+    <rect x="1040" y="822" width="300" height="4"/><rect x="1160" y="856" width="160" height="4"/>
+    <rect x="380" y="800" width="220" height="3"/><rect x="640" y="840" width="260" height="3"/>
+  </g>
+  <!-- far headland -->
+  <path d="M0 742 L180 690 L340 726 L520 700 L700 736 L700 760 L0 760 Z" fill="url(#f)" filter="url(#sft)"/>
+  <path d="M1380 740 L1520 704 L1680 730 L1820 696 L1920 724 L1920 760 L1380 760 Z" fill="url(#f)" opacity="0.8" filter="url(#sft)"/>
+  <!-- near ridge -->
+  <path d="M0 960 C 220 880, 420 916, 620 872 C 820 830, 1000 892, 1200 858 C 1400 824, 1640 884, 1920 836 L1920 1200 L0 1200 Z" fill="url(#m)"/>
+  <!-- cypresses on the ridge -->
+  <g fill="#30352A" opacity="0.9">
+    <path d="M300 900 c11 0 16 -60 0 -104 c-16 44 -11 104 0 104 z"/>
+    <path d="M348 906 c9 0 14 -52 0 -90 c-14 38 -9 90 0 90 z"/>
+    <path d="M1468 872 c11 0 16 -58 0 -100 c-16 42 -11 100 0 100 z"/>
+    <path d="M1512 878 c9 0 13 -48 0 -84 c-13 36 -9 84 0 84 z"/>
+    <path d="M902 878 c10 0 15 -54 0 -94 c-15 40 -10 94 0 94 z"/>
+  </g>
+</svg>

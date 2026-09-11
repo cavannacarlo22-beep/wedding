@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Neutral film grain overlay, used at very low opacity -->
+  <filter id="fg">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="5" result="t"/>
+    <feColorMatrix in="t" type="saturate" values="0"/>
+  </filter>
+  <rect width="300" height="300" filter="url(#fg)" opacity="0.5"/>
+</svg>
